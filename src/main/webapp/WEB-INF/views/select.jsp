@@ -52,8 +52,8 @@
 				<div class="col-lg-8 col-lg-offset-2 centered">
 					<p>現在のあなたの情報を表示するよ</p>
 					<p>
-						あなたのIDと名前を入力してね<br>
-						入力しないと表示できないよ
+						あなたのIDと名前を入力してください<br>
+						入力しないと表示できません
 					</p>
 
 					<c:if test="${not empty errmsg}">
