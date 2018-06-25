@@ -24,7 +24,6 @@ public class UpdateForm {
 	private String newqualification;
 	private String newmerit;
 	private String newdemerit;
-	private String newoccupations;
 	private String newindustry;
 	private String newwork_location;
 	private String newfight;
@@ -173,13 +172,7 @@ public class UpdateForm {
 		this.newdemerit = newdemerit;
 	}
 
-	public String getNewoccupations() {
-		return newoccupations;
-	}
 
-	public void setNewoccupations(String newoccupations) {
-		this.newoccupations = newoccupations;
-	}
 
 	public String getNewindustry() {
 		return newindustry;
@@ -241,8 +234,4 @@ public class UpdateForm {
 		this.prevTel = _prevTel;
 	}
 
-	public boolean hasRequiredError() {
-		return (newName == null || newName.isEmpty());
-
-	}
 }

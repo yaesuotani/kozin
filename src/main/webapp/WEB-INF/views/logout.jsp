@@ -1,16 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Refresh" content="1;URL=index">
-<title>ログアウト</title>
-<link href="/css/commons.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="assets/img/iconimg.png">
+
+<title>CopyLog</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/main.css" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="assets/js/hover.zoom.js"></script>
+<script src="assets/js/hover.zoom.conf.js"></script>
 </head>
 <body>
-<div class="center">
-  <p>ログアウトしました。<br></p>
-</div>
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index">CopyLog</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login">ログイン</a></li>
+					<li><a href="menu">メニュー</a></li>
+					<li><a href="help">このサイトの説明</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="ww">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<h1>ログアウトしました</h1>
+					<h2>see you again</h2>
+					<br>
+					<h3>I am looking forward to seeing you next time.</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+	<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

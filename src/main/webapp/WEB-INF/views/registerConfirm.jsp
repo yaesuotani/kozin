@@ -1,39 +1,98 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>登録確認画面</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="assets/img/iconimg.png">
+
+<title>CopyLog</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/main.css" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="assets/js/hover.zoom.js"></script>
+<script src="assets/js/hover.zoom.conf.js"></script>
 </head>
 <body>
-<p>この内容で会員登録いたしますか？</p>
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index">CopyLog</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login">ログイン</a></li>
+					<li><a href="menu">メニュー</a></li>
+					<li><a href="help">このサイトの説明</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-<c:if test="${not empty errmsg}">
-  <p class="error">${fn:escapeXml(errmsg)}</p>
-</c:if>
+	<div id="ww">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<p>この内容で会員登録いたしますか？</p>
 
-<form:form action="register" method="post" modelAttribute="registerForm">
-    <div>
-      <label>ID</label><form:input path="userId" readonly="true" />
-    </div>
-    <div>
-      <label>お名前</label><form:input path="name" readonly="true" />
-    </div>
-    <div>
-      <label>パスワード(再入力)</label><form:password path="confirmPassword" />
-    </div>
-  <div>
-    <input type="submit" name="button" value="登録">
-    <input type="submit" name="button" value="戻る" onclick="location.href='registerBack'; return false;">
-  </div>
-</form:form>
-<div>
-  <a href="menu">メニューに戻る</a>
-</div>
+					<c:if test="${not empty errmsg}">
+						<p class="error">${fn:escapeXml(errmsg)}</p>
+					</c:if>
+
+					<form:form action="register" method="post"
+						modelAttribute="registerForm">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label>ID</label>
+								<form:input path="userId" readonly="true" class="form-control"
+									id="ID" placeholder="ID" />
+							</div>
+
+							<div class="form-group">
+								<label>お名前</label>
+								<form:input path="name" readonly="true" class="form-control"
+									id="NAME" placeholder="NAME" />
+							</div>
+
+							<div class="form-group">
+								<label>パスワード(再入力)</label>
+								<form:password path="confirmPassword" class="form-control"
+									id="password" placeholder="password" />
+							</div>
+
+							<div>
+								<button type="submit" class="btn btn-default">登録</button>
+								<button type="submit" class="btn btn-default"
+									onclick="location.href='registerBack'; return false;">戻る</button>
+							</div>
+
+						</form>
+					</form:form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+	<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

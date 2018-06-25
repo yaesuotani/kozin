@@ -4,39 +4,90 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>新規会員登録</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="assets/img/iconimg.png">
+
+<title>CopyLog</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/main.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="assets/js/hover.zoom.js"></script>
+<script src="assets/js/hover.zoom.conf.js"></script>
 </head>
 <body>
-	<p>
-		登録情報を入力してください<br> <span class="required"></span>
-	</p>
-
-	<c:if test="${not empty errmsg}">
-		<p class="error">${fn:escapeXml(errmsg)}</p>
-	</c:if>
-
-	<form:form action="registerConfirm" method="post"
-		modelAttribute="registerForm">
-		<div>
-			<label>ID</label>
-			<form:input path="userId" />
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index">CopyLog</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="login">ログイン</a></li>
+					<li><a href="menu">メニュー</a></li>
+					<li><a href="help">このサイトの説明</a></li>
+				</ul>
+			</div>
 		</div>
-		<div>
-			<label>お名前</label>
-			<form:input path="name" />
-		</div>
-		<div>
-			<label>パスワード</label>
-			<form:password path="password" showPassword="true" />
-		</div>
-		<input type="submit" value="確認">
-	</form:form>
-	<div>
-		<a href="index">TOP PAGEに戻る</a>
 	</div>
+
+	<div id="ww">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<p>
+						会員登録を行います<br> 全ての項目に情報を入力してください<br>
+					</p>
+
+					<c:if test="${not empty errmsg}">
+						<p class="error">${fn:escapeXml(errmsg)}</p>
+					</c:if>
+
+					<form:form action="registerConfirm" method="post"
+						modelAttribute="registerForm">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label>ID</label>
+								<form:input path="userId" class="form-control" id="LoginID"
+									placeholder="ID" />
+							</div>
+							<div class="form-group">
+								<label>お名前</label>
+								<form:input path="name" class="form-control" id="Name"
+									placeholder="Name" />
+							</div>
+							<div class="form-group">
+								<label>PASSWORD</label>
+								<form:password path="password" class="form-control"
+									id="Password" placeholder="Password" />
+							</div>
+							<p>
+								<button type="submit" class="btn btn-default">確認</button>
+							</p>
+						</form>
+					</form:form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+	<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

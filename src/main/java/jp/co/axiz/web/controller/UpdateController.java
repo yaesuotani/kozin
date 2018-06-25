@@ -61,11 +61,10 @@ public class UpdateController {
 		form.setNewqualification(user.getQualification());
 		form.setNewmerit(user.getMerit());
 		form.setNewdemerit(user.getDemerit());
-		form.setNewoccupations(user.getOccupations());
+
 		form.setNewindustry(user.getIndustry());
 		form.setNewwork_location(user.getWork_location());
 		form.setNewfight(user.getFight());
-
 
 		return "updateInput";
 	}
@@ -74,35 +73,28 @@ public class UpdateController {
 	public String updateConfirm(@Validated @ModelAttribute("updateForm") UpdateForm form, BindingResult bindingResult,
 			Model model) {
 
-		if (form.hasRequiredError()) {
-			String errorMsg = messageSource.getMessage("required.error", null, Locale.getDefault());
-			model.addAttribute("errmsg", errorMsg);
-			return "updateInput";
-		}
-
 		UserInfo beforeUser = sessionInfo.getPrevUser();
 
 		UserInfo afterUser = new UserInfo();
 		afterUser.setUserId(beforeUser.getUserId());
 		afterUser.setUserName(form.getNewName());
 		afterUser.setTelephone(form.getNewTel());
+		afterUser.setLocation(form.getNewlocation());
+		afterUser.setDepartment(form.getNewdepartment());
+		afterUser.setQualification(form.getNewqualification());
+		afterUser.setMerit(form.getNewmerit());
+		afterUser.setDemerit(form.getNewdemerit());
+		afterUser.setIndustry(form.getNewindustry());
+		afterUser.setWork_location(form.getNewwork_location());
+		afterUser.setFight(form.getNewfight());
 
 
-		if(afterUser.equals(beforeUser)) {
-			String errorMsg = messageSource.getMessage("required.change", null, Locale.getDefault());
-			model.addAttribute("errmsg", errorMsg);
-			return "updateInput";
-		}
+
 
 		sessionInfo.setAfterUser(afterUser);
 
 		form.setPrevName(beforeUser.getUserName());
 		form.setPrevTel(beforeUser.getTelephone());
-
-
-		if(beforeUser.getPassword().equals(afterUser.getPassword())) {
-
-		}
 
 		return "updateConfirm";
 	}
@@ -115,7 +107,15 @@ public class UpdateController {
 		form.setUserId(afterUser.getUserId());
 		form.setNewName(afterUser.getUserName());
 		form.setNewTel(afterUser.getTelephone());
+		form.setNewlocation(afterUser.getLocation());
+		form.setNewdepartment(afterUser.getDepartment());
+		form.setNewqualification(afterUser.getQualification());
+		form.setNewmerit(afterUser.getMerit());
+		form.setNewdemerit(afterUser.getDemerit());
 
+		form.setNewindustry(afterUser.getIndustry());
+		form.setNewwork_location(afterUser.getWork_location());
+		form.setNewfight(afterUser.getFight());
 
 		return "updateInput";
 	}
@@ -137,16 +137,4 @@ public class UpdateController {
 		return "updateResult";
 	}
 
-	//	@RequestMapping(value = "/delete", method = RequestMethod.POST)
-	//	public String deleteExecute(@Validated @ModelAttribute("deleteForm") DeleteForm form, BindingResult bindingResult,
-	//			Model model) {
-	//
-	//		int id = form.getUserId();
-	//
-	//		userInfoService.delete(id);
-	//
-	//		model.addAttribute("user", adminService.getLoginUser());
-	//
-	//		return "deleteResult";
-	//	}
 }

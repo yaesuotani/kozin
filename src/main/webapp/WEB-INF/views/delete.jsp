@@ -14,7 +14,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="assets/img/iconimg.png">
 
-<title>退会画面</title>
+<title>CopyLog</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -35,7 +35,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index">isxy</a>
+				<a class="navbar-brand" href="index">CopyLog</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -67,7 +67,9 @@
 									placeholder="ID" />
 
 							</div>
-							<input type="submit" value="退会確認画面へ">
+							<p>
+								<button type="submit" class="btn btn-default">退会確認画面へ</button>
+							</p>
 						</form>
 					</form:form>
 

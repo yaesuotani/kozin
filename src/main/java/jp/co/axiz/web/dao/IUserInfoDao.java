@@ -11,6 +11,6 @@ public interface IUserInfoDao {
 	public UserInfo findById(String id);
 	public UserInfo findByIdde(String id);
 	public void register(UserInfo user);
-	public void delete(String userInfo);
+	public void delete(String user);
 	public void update(UserInfo user);
 }

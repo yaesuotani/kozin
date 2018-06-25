@@ -109,7 +109,7 @@ public class UserInfoDao implements IUserInfoDao {
 
 	@Override
 	public void update(UserInfo user) {
-		String sql = "UPDATE user_info SET user_name = :userName, telephone = :telephone, location = :location, department = :department, qualification = :qualification, merit = :merit, demerit = :demerit, occupations = :occupations, industry = :industry, work_location = :work_location, fight = :fight, WHERE user_id = :userId";
+		String sql = "UPDATE user_info SET user_name = :userName, telephone = :telephone, location = :location, department = :department, qualification = :qualification, merit = :merit, demerit = :demerit, industry = :industry, work_location = :work_location, fight = :fight WHERE user_id = :userId";
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
 
@@ -120,7 +120,6 @@ public class UserInfoDao implements IUserInfoDao {
 		param.addValue("qualification", user.getQualification());
 		param.addValue("merit", user.getMerit());
 		param.addValue("demerit", user.getDemerit());
-		param.addValue("occupations", user.getOccupations());
 		param.addValue("industry", user.getIndustry());
 		param.addValue("work_location", user.getWork_location());
 		param.addValue("fight", user.getFight());
